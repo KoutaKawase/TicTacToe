@@ -6,6 +6,7 @@ namespace TicTacToe
     {
         private readonly Player playerA;
         private readonly Player playerB;
+        private readonly Board board;
 
         public TicTacToe()
         {
@@ -13,13 +14,15 @@ namespace TicTacToe
             var cross = new Mark(MarkType.Cross);
             this.playerA = new Player(circle, true);
             this.playerB = new Player(cross, false);
+            this.board = new Board();
         }
         public void Play()
         {
             //開始
             Console.WriteLine(BuildStartMessage());
 
-            //ボードを表示に先行後攻それぞれ打ち続けてもらう
+            //ボードを表示
+            //先行後攻それぞれ打ち続けてもらう
             //終了処理
         }
 
