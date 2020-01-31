@@ -4,17 +4,21 @@ namespace TicTacToe
 {
     public class TicTacToe
     {
+        private readonly Player playerA;
+        private readonly Player playerB;
+
+        public TicTacToe()
+        {
+            var circle = new Mark(MarkType.Circle);
+            var cross = new Mark(MarkType.Cross);
+            this.playerA = new Player(circle, true);
+            this.playerB = new Player(cross, false);
+        }
         public void Play()
         {
             //開始
             Console.WriteLine(BuildStartMessage());
-            var circle = new Mark(MarkType.Circle);
-            var cross = new Mark(MarkType.Cross);
-            var playerA = new Player(circle, true);
-            var playerB = new Player(cross, false);
 
-            Console.WriteLine(playerA);
-            Console.WriteLine(playerB);
             //ボードを表示に先行後攻それぞれ打ち続けてもらう
             //終了処理
         }
