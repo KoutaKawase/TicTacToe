@@ -7,13 +7,13 @@ namespace TicTacToe
     {
         public const int ROW = 3;
         public const int COLUMN = 3;
-        public readonly IList<MarkType> board;
+        public readonly IList<MarkType> state;
 
         public Board()
         {
-            var board = new MarkType[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-            IList<MarkType> freezedBoard = Array.AsReadOnly(board);
-            this.board = freezedBoard;
+            var boardState = new MarkType[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+            IList<MarkType> freezedBoard = Array.AsReadOnly(boardState);
+            this.state = freezedBoard;
         }
 
         public void Display()
@@ -21,14 +21,14 @@ namespace TicTacToe
             Console.WriteLine(this);
         }
 
-        private string ConvertToString(IList<MarkType> board)
+        private string ConvertToStringFrom(IList<MarkType> board)
         {
             return "123";
         }
 
         public override string ToString()
         {
-            return this.ConvertToString(this.board);
+            return this.ConvertToStringFrom(this.state);
         }
     }
 }
