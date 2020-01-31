@@ -7,7 +7,7 @@ namespace TicTacToe
         static void Main(string[] args)
         {
             var game = new TicTacToe();
-            game.play();
+            game.Play();
         }
     }
 }

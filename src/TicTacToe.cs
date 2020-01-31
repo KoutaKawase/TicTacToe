@@ -4,9 +4,29 @@ namespace TicTacToe
 {
     public class TicTacToe
     {
-        public void play()
+        private readonly Player playerA;
+        private readonly Player playerB;
+
+        public TicTacToe()
         {
-            Console.WriteLine("Game Start!");
+            var circle = new Mark(MarkType.Circle);
+            var cross = new Mark(MarkType.Cross);
+            this.playerA = new Player(circle, true);
+            this.playerB = new Player(cross, false);
+        }
+        public void Play()
+        {
+            //開始
+            Console.WriteLine(BuildStartMessage());
+
+            //ボードを表示に先行後攻それぞれ打ち続けてもらう
+            //終了処理
+        }
+
+        private static string BuildStartMessage()
+        {
+            var message = "Welcome To TicTacToe!!";
+            return message;
         }
     }
 }
