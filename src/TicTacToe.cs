@@ -20,8 +20,8 @@ namespace TicTacToe
         {
             //開始
             Console.WriteLine(BuildStartMessage());
-
             //ボードを表示
+            board.Display();
             //先行後攻それぞれ打ち続けてもらう
             //終了処理
         }
