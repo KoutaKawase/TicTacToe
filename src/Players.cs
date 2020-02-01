@@ -15,9 +15,9 @@ namespace TicTacToe
 
         public Players Add(Player player)
         {
-            var clonedPlayers = (Players) this.MemberwiseClone();
-            clonedPlayers.players.Add(player);
-            return clonedPlayers;
+            var newList = new List<Player>(this.players);
+            newList.Add(player);
+            return new Players(newList);
         }
 
         public override string ToString()
