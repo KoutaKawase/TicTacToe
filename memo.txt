@@ -36,3 +36,27 @@
 4 改行して--+--+--を追加
 ↓
 2から4を3回繰り返す でいけそう
+
+入力処理
+縦: 1 横: B の形式で入力してもらう　ただし有効でない入力は警告を出しもう一度入力してもらう
+↓
+入力された箇所をそのプレイヤーのマークで埋めた新しいBoardオブジェクトを作成する
+↓
+そのプレイヤーの勝ち判定を実行　勝ちならisActiveをfalseにして抜ける 負けなら次
+↓
+プレイしたプレイヤーのisNextをfalseにして次のプレイヤーのisNextをtrueにする
+
+繰り返す
+
+現在のプレイヤー取得
+それぞれのプレイヤーはisNextプロパティをbooleanで持ってる。trueなら現在プレイすべきプレイヤーである。
+
+最初はcircleから始まる circleはisNext = true;
+
+currentPlayerを用意して circleのisNextを見て trueならcircleを falseならcrossを入れる
+
+でいこう
+
+TODO:
+playerやisActiveはGameInfoクラスに切り出す
+var initializedGame = game.Init(); みたいな感じでinitメソッド中で色々gameinfoを初期化する

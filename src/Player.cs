@@ -6,7 +6,7 @@ namespace TicTacToe
     public class Player
     {
         public readonly Mark mark;
-        private Boolean isNext = false;
+        private readonly Boolean isNext = false;
 
         public Player(Mark mark, Boolean isNext)
         {
