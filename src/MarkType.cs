@@ -6,6 +6,6 @@ namespace TicTacToe
     {
         None,
         Circle,
-        Cross,
+        Cross
     }
 }
