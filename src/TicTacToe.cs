@@ -16,7 +16,7 @@ namespace TicTacToe
             var cross = new Player(new Mark(MarkType.Cross), false);
             var addedCirclePlayers = players.Add(circle);
             var addedCrossPlayers = addedCirclePlayers.Add(cross);
-            this.info = new GameInfo(players, true);
+            this.info = new GameInfo(addedCrossPlayers, true);
             this.board = new Board();
         }
 
