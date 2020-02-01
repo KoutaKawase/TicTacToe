@@ -7,6 +7,8 @@ namespace TicTacToe
         private readonly Player playerA;
         private readonly Player playerB;
         private readonly Board board;
+        //試合中かどうか
+        private Boolean isActive = false;
 
         public TicTacToe()
         {
@@ -18,8 +20,10 @@ namespace TicTacToe
         }
         public void Play()
         {
+            //TODO: isActiveフラグを作ってwhileを回す
             //開始
             Console.WriteLine(BuildStartMessage());
+            isActive = true;
             //ボードを表示
             board.Display();
             //先行後攻それぞれ打ち続けてもらう
