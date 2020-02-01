@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace TicTacToe
 {
@@ -21,14 +23,9 @@ namespace TicTacToe
             Console.WriteLine(this);
         }
 
-        private string ConvertToStringFrom(IList<MarkType> board)
-        {
-            return "123";
-        }
-
         public override string ToString()
         {
-            return this.ConvertToStringFrom(this.state);
+            return Converter.ConvertToStringFrom(this.state);
         }
     }
 }
