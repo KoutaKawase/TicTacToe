@@ -7,6 +7,7 @@ namespace TicTacToe
     {
         public readonly Players players;
         public readonly Boolean isActiveGame = false;
+        public readonly Player nextPlayer;
 
         public GameInfo(Players players, Boolean isActiveGame)
         {
