@@ -59,4 +59,3 @@ currentPlayerを用意して circleのisNextを見て trueならcircleを false�
 
 TODO:
 playerやisActiveはGameInfoクラスに切り出す
-var initializedGame = game.Init(); みたいな感じでinitメソッド中で色々gameinfoを初期化する

@@ -24,11 +24,12 @@ namespace TicTacToe
         {
             //開始
             Console.WriteLine("Welcome To TicTacToe!!");
-            Console.WriteLine(info);
             //ボードを表示
             board.Display();
             //先行後攻それぞれ打ち続けてもらう
-
+            Player next = info.nextPlayer;
+            var input = next.Play();
+            Console.WriteLine(input);
             //終了処理
         }
     }

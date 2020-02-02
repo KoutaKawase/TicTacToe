@@ -14,6 +14,16 @@ namespace TicTacToe
             this.isNext = isNext;
         }
 
+        public Input Play()
+        {
+            var isValidInput = false;
+            do
+            {
+
+            } while (isValidInput);
+            return new Input(1, 1);
+        }
+
         public override string ToString()
         {
             return $"mark: {this.mark} isNext: {this.isNext}";

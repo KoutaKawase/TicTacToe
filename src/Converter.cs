@@ -56,7 +56,7 @@ namespace TicTacToe
                 sb = BuildMarkAndDecoration(sb, chunk.Marks);
             }
             //ROW位置目印を生成
-            sb.Append("    A   B   C  ");
+            sb.Append("    1   2   3  ");
 
             return sb;
         }
