@@ -16,7 +16,7 @@ namespace TicTacToe
             var cross = new Player(new Mark(MarkType.Cross), false);
             var addedCirclePlayers = players.Add(circle);
             var addedCrossPlayers = addedCirclePlayers.Add(cross);
-            this.info = new GameInfo(addedCrossPlayers, true);
+            this.info = new GameInfo(addedCrossPlayers, true, circle);
             this.board = new Board();
         }
 
@@ -24,7 +24,7 @@ namespace TicTacToe
         {
             //開始
             Console.WriteLine("Welcome To TicTacToe!!");
-            Console.WriteLine(info.players);
+            Console.WriteLine(info);
             //ボードを表示
             board.Display();
             //先行後攻それぞれ打ち続けてもらう
