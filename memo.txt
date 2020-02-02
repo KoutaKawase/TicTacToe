@@ -57,5 +57,8 @@ currentPlayerを用意して circleのisNextを見て trueならcircleを false�
 
 でいこう
 
-TODO:
-playerやisActiveはGameInfoクラスに切り出す
+入力の仕様
+1から3のみの数字のみ許可
+それ以外は警告を出し再入力させる
+
+何も入力せずエンターを押したら警告を出し再入力
