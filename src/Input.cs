@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace TicTacToe
 {
@@ -17,10 +18,20 @@ namespace TicTacToe
         {
             if (!(1 <= column && column <= 3) || !(1 <= row && row <= 3))
             {
-                Console.WriteLine("無効な数字が含まれています。");
+                Console.WriteLine("無効な入力です。");
                 return false;
             }
             return true;
+        }
+
+        public static Boolean isAlreadyExistsMark(int index, IList<MarkType> state)
+        {
+            if (state[index] != MarkType.None)
+            {
+                Console.WriteLine("既に置かれています。");
+                return true;
+            }
+            return false;
         }
 
         public override string ToString()

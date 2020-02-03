@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace TicTacToe
 {
@@ -14,13 +15,16 @@ namespace TicTacToe
             this.isNext = isNext;
         }
 
-        public Input Play()
+        public Input Play(IList<MarkType> state)
         {
             var isValidInput = false;
             int row = 0;
             int col = 0;
+            //state上の位置
+            int index = 0;
             do
             {
+                //何か動いてるからとにかくヨシ！
                 Console.Write("縦 >>");
                 var rowBuffer = Console.ReadLine();
                 Console.Write("横 >>");
@@ -28,10 +32,12 @@ namespace TicTacToe
 
                 if (int.TryParse(rowBuffer, out row) && int.TryParse(colBuffer, out col))
                 {
+                    index = col * row - 1;
                     isValidInput = true;
                 }
 
-                isValidInput = Input.isValidRange(col, row);
+                isValidInput = Input.isValidRange(col, row) && !Input.isAlreadyExistsMark(index, state);
+
             } while (!isValidInput);
 
             return new Input(col, row);

@@ -28,8 +28,9 @@ namespace TicTacToe
             board.Display();
             //先行後攻それぞれ打ち続けてもらう
             Player next = info.nextPlayer;
-            var input = next.Play();
-            Console.WriteLine(input);
+            //TODO: 既に置いてある場合は繰り返す
+            var input = next.Play(board.state);
+            Console.WriteLine(board.state[0]);
             //終了処理
         }
     }
