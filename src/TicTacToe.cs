@@ -6,7 +6,7 @@ namespace TicTacToe
     public class TicTacToe
     {
         private readonly GameInfo info;
-        private readonly Board board;
+        private Board board;
         //試合中かどうか
 
         public TicTacToe()
@@ -30,7 +30,8 @@ namespace TicTacToe
             Player next = info.nextPlayer;
             //TODO: 既に置いてある場合は繰り返す
             var input = next.Play(board.state);
-            Console.WriteLine(board.state[0]);
+            board = board.ChangeState(input);
+            board.Display();
             //終了処理
         }
     }

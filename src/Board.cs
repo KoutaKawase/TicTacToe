@@ -13,7 +13,7 @@ namespace TicTacToe
 
         public Board()
         {
-            var boardState = Enumerable.Repeat(MarkType.Circle, 9).ToArray();
+            var boardState = Enumerable.Repeat(MarkType.None, 9).ToArray();
             IList<MarkType> freezedBoard = Array.AsReadOnly(boardState);
             this.state = freezedBoard;
         }
@@ -21,6 +21,11 @@ namespace TicTacToe
         public void Display()
         {
             Console.WriteLine(this);
+        }
+
+        public Board ChangeState(Input input)
+        {
+            return new Board();
         }
 
         public override string ToString()
