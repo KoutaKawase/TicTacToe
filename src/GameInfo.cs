@@ -6,20 +6,14 @@ namespace TicTacToe
     public class GameInfo
     {
         public readonly Players players;
-        public readonly Boolean isActiveGame = false;
+        public readonly Boolean isActiveGame;
         //現在プレイすべきプレイヤー
-        public readonly Player nextPlayer;
 
-        public GameInfo(Players players, Boolean isActiveGame, Player firstPlayer)
+        public GameInfo(Players players, Boolean isActiveGame)
         {
             this.players = players;
             this.isActiveGame = isActiveGame;
-            this.nextPlayer = firstPlayer;
         }
 
-        public override string ToString()
-        {
-            return $"NEXT: {nextPlayer}";
-        }
     }
 }

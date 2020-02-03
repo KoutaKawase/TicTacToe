@@ -20,6 +20,16 @@ namespace TicTacToe
             return new Players(newList);
         }
 
+        public Player ObtainNextPlayer()
+        {
+            if (this.players[0].isNext)
+            {
+                return this.players[0];
+            }
+
+            return this.players[1];
+        }
+
         public override string ToString()
         {
             var sb = new StringBuilder();
