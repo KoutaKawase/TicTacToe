@@ -18,14 +18,22 @@ namespace TicTacToe
             this.state = freezedBoard;
         }
 
+        public Board(IList<MarkType> state)
+        {
+            this.state = state;
+        }
+
         public void Display()
         {
             Console.WriteLine(this);
         }
 
-        public Board ChangeState(Input input)
+        public Board ChangeState(Input input, Player player)
         {
-            return new Board();
+            var index = input.column * input.row - 1;
+            var state = new List<MarkType>(this.state);
+            state[index] = player.mark;
+            return new Board(state);
         }
 
         public override string ToString()

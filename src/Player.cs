@@ -6,10 +6,10 @@ namespace TicTacToe
     //プレイヤー情報を管理するクラス
     public class Player
     {
-        public readonly Mark mark;
+        public readonly MarkType mark;
         private readonly Boolean isNext = false;
 
-        public Player(Mark mark, Boolean isNext)
+        public Player(MarkType mark, Boolean isNext)
         {
             this.mark = mark;
             this.isNext = isNext;

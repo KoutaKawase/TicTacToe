@@ -12,8 +12,8 @@ namespace TicTacToe
         public TicTacToe()
         {
             var players = new Players(new List<Player>());
-            var circle = new Player(new Mark(MarkType.Circle), true);
-            var cross = new Player(new Mark(MarkType.Cross), false);
+            var circle = new Player(MarkType.Circle, true);
+            var cross = new Player(MarkType.Cross, false);
             var addedCirclePlayers = players.Add(circle);
             var addedCrossPlayers = addedCirclePlayers.Add(cross);
             this.info = new GameInfo(addedCrossPlayers, true, circle);
@@ -30,7 +30,7 @@ namespace TicTacToe
             Player next = info.nextPlayer;
             //TODO: 既に置いてある場合は繰り返す
             var input = next.Play(board.state);
-            board = board.ChangeState(input);
+            board = board.ChangeState(input, next);
             board.Display();
             //終了処理
         }
