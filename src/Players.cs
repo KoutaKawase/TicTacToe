@@ -20,6 +20,23 @@ namespace TicTacToe
             return new Players(newList);
         }
 
+        public Players SwitchNext()
+        {
+            if (players[0].isNext == true)
+            {
+                players[0].isNext = false;
+                players[1].isNext = true;
+            }
+            else
+            {
+                players[0].isNext = true;
+                players[1].isNext = false;
+            }
+            Console.WriteLine(players[0].isNext);
+            IList<Player> newPlayers = new List<Player>(players);
+            return new Players(newPlayers);
+        }
+
         public Player ObtainNextPlayer()
         {
             if (this.players[0].isNext)

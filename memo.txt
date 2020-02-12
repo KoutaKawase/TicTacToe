@@ -61,6 +61,5 @@ currentPlayerを用意して circleのisNextを見て trueならcircleを false�
 1から3のみの数字のみ許可
 それ以外は警告を出し再入力させる
 
+ネクストプレイヤー変更
 
-changeState
-input(col, rowをもつ)を受取、今のstateと

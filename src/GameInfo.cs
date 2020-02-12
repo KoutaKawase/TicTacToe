@@ -7,7 +7,6 @@ namespace TicTacToe
     {
         public readonly Players players;
         public readonly Boolean isActiveGame;
-        //現在プレイすべきプレイヤー
 
         public GameInfo(Players players, Boolean isActiveGame)
         {
@@ -15,5 +14,16 @@ namespace TicTacToe
             this.isActiveGame = isActiveGame;
         }
 
+        public GameInfo SwitchNext()
+        {
+            Players newPlayers = players.SwitchNext();
+            Console.WriteLine(newPlayers);
+            return new GameInfo(newPlayers, this.isActiveGame);
+        }
+
+        public Player ObtainNextPlayer()
+        {
+            return players.ObtainNextPlayer();
+        }
     }
 }

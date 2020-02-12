@@ -29,13 +29,12 @@ namespace TicTacToe
             {
                 board.Display();
                 //先行後攻それぞれ打ち続けてもらう
-                Player next = info.players.ObtainNextPlayer();
+                Player next = info.ObtainNextPlayer();
                 //TODO: 既に置いてある場合は繰り返す
                 var input = next.Play(board.state);
                 board = board.ChangeState(input, next);
+                info = info.SwitchNext();
             }
-            //ボードを表示
-
             //終了処理
         }
     }
