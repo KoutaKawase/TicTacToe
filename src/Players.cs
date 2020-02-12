@@ -32,7 +32,6 @@ namespace TicTacToe
                 players[0].isNext = true;
                 players[1].isNext = false;
             }
-            Console.WriteLine(players[0].isNext);
             IList<Player> newPlayers = new List<Player>(players);
             return new Players(newPlayers);
         }

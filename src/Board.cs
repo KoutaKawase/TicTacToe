@@ -28,9 +28,27 @@ namespace TicTacToe
             Console.WriteLine(this);
         }
 
+        public static int CalcIndex(int col, int row)
+        {
+            switch (col)
+            {
+                case 1:
+                    return col + row - 2;
+                case 2:
+                    return col + row;
+                case 3:
+                    return col + row + 2;
+                default:
+                    throw new ArgumentException(
+                        message: "Something is wrong!!"
+                    );
+            }
+        }
+
         public Board ChangeState(Input input, Player player)
         {
-            var index = input.column * input.row - 1;
+            var index = CalcIndex(input.column, input.row);
+            Console.WriteLine(index);
             var state = new List<MarkType>(this.state);
             state[index] = player.mark;
             return new Board(state);

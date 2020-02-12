@@ -26,13 +26,22 @@ namespace TicTacToe
             {
                 //何か動いてるからとにかくヨシ！
                 Console.Write("縦 >>");
-                var rowBuffer = Console.ReadLine();
-                Console.Write("横 >>");
                 var colBuffer = Console.ReadLine();
+                Console.Write("横 >>");
+                var rowBuffer = Console.ReadLine();
 
                 if (int.TryParse(rowBuffer, out row) && int.TryParse(colBuffer, out col))
                 {
-                    index = col * row - 1;
+                    try
+                    {
+                        index = Board.CalcIndex(col, row);
+                    }
+                    catch
+                    {
+                        Console.WriteLine("無効な入力です");
+                        continue;
+                    }
+
                     isValidInput = true;
                 }
 
