@@ -15,6 +15,12 @@ namespace TicTacToe
             this.isNext = isNext;
         }
 
+        public Player(MarkType mark)
+        {
+            this.mark = mark;
+            this.isNext = false;
+        }
+
         public Input Play(IList<MarkType> state)
         {
             var isValidInput = false;

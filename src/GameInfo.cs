@@ -17,7 +17,6 @@ namespace TicTacToe
         public GameInfo SwitchNext()
         {
             Players newPlayers = players.SwitchNext();
-            Console.WriteLine(newPlayers);
             return new GameInfo(newPlayers, this.isActiveGame);
         }
 

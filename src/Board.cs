@@ -45,6 +45,17 @@ namespace TicTacToe
             }
         }
 
+        public Boolean isFilled()
+        {
+            Boolean hasNone = state.Contains(MarkType.None);
+            //全てがNone以外で埋まっていれば全て埋まったと見なす
+            if (!hasNone)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public Board ChangeState(Input input, Player player)
         {
             var index = CalcIndex(input.column, input.row);
